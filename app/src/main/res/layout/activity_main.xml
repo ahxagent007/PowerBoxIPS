@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:weightSum="15"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_weight="3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:background="#63d356"
+        >
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="10"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:weightSum="10"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_weight="3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="Company:"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:gravity="right|center"/>
+
+                    <EditText
+                        android:layout_weight="5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+
+                    <Button
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/round_button_green"
+                        android:text="SET"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="#FFFFFF"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:weightSum="10"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_weight="3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="Product:"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:gravity="right|center"/>
+
+
+                    <EditText
+                        android:layout_weight="5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+
+
+                    <Button
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/round_button_green"
+                        android:text="SET"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="#FFFFFF"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:weightSum="10"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_weight="3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="Model:"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:gravity="right|center"/>
+
+                    <Spinner
+                        android:layout_weight="5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"></Spinner>
+
+                    <Button
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/round_button_green"
+                        android:text="SET"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="#FFFFFF"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:weightSum="10"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_weight="3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="Battery:"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:gravity="right|center"/>
+
+                    <Spinner
+                        android:layout_weight="5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"></Spinner>
+
+                    <Button
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/round_button_green"
+                        android:text="SET"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="#FFFFFF"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:weightSum="10"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_weight="3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="Batt ADJ:"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:gravity="right|center"/>
+                    <SeekBar
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:layout_gravity="center"/>
+
+                    <EditText
+
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+
+                    <Button
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/round_button_green"
+                        android:text="SET"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="#FFFFFF"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:weightSum="10"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_weight="3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="Low Batt:"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:gravity="right|center"/>
+                    <SeekBar
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:layout_gravity="center"/>
+
+                    <EditText
+
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+
+                    <Button
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/round_button_green"
+                        android:text="SET"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="#FFFFFF"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:weightSum="10"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_weight="3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="Full Char:"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:gravity="right|center"/>
+                    <SeekBar
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:layout_gravity="center"/>
+
+                    <EditText
+
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+
+                    <Button
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/round_button_green"
+                        android:text="SET"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="#FFFFFF"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:weightSum="10"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_weight="3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="Reconnect:"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:gravity="right|center"/>
+                    <SeekBar
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:layout_gravity="center"/>
+
+                    <EditText
+
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+
+                    <Button
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/round_button_green"
+                        android:text="SET"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="#FFFFFF"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:weightSum="10"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_weight="3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="PWM ADJ:"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:gravity="right|center"/>
+                    <SeekBar
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:layout_gravity="center"/>
+
+                    <EditText
+
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+
+                    <Button
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/round_button_green"
+                        android:text="SET"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="#FFFFFF"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+
+
+    </LinearLayout>
+
+</LinearLayout>
