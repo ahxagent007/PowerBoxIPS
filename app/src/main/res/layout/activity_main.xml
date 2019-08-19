@@ -14,7 +14,65 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         android:background="#63d356"
+        android:weightSum="2"
         >
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:weightSum="5">
+
+            <TextView
+                android:layout_weight="4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="INVERTER CALIBATION"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="28dp"
+                android:padding="2dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:weightSum="8"
+            android:padding="5dp">
+
+            <Button
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_button_orange"
+                android:padding="3dp"
+                android:text="Default"
+                android:layout_margin="2dp"/>
+
+            <Button
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_button_orange"
+                android:padding="3dp"
+                android:text="Backup"
+                android:layout_margin="2dp"/>
+
+            <Button
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_button_orange"
+                android:padding="3dp"
+                android:text="Default"
+                android:layout_margin="2dp"/>
+
+
+        </LinearLayout>
+
 
 
     </LinearLayout>
