@@ -1,3 +1,47 @@
 <resources>
     <string name="app_name">Power Box IPS</string>
+
+
+    <string name="ips_model_prompt">Model</string>
+    <string-array name="ips_model">
+        <item>400VA</item>
+        <item>600VA</item>
+        <item>800VA</item>
+        <item>1000VA</item>
+        <item>1200VA</item>
+        <item>1600VA</item>
+        <item>1800VA</item>
+        <item>2000VA</item>
+    </string-array>
+
+    <string name="ips_battery_prompt">Battery</string>
+    <string-array name="ips_battery">
+        <item>12</item>
+        <item>24</item>
+        <item>36</item>
+        <item>48</item>
+    </string-array>
+
+
+    <string name="ips_watt_prompt">WATT</string>
+    <string-array name="ips_watt">
+        <item>400</item>
+        <item>600</item>
+        <item>800</item>
+        <item>1000</item>
+        <item>1200</item>
+        <item>1600</item>
+        <item>1800</item>
+        <item>2000</item>
+    </string-array>
+
+
+
+
+
+
+
+
+
+
 </resources>

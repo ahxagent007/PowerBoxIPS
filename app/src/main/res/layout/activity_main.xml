@@ -30,7 +30,7 @@
                 android:text="INVERTER CALIBATION"
                 android:gravity="center"
                 android:textColor="#FFFFFF"
-                android:textSize="28dp"
+                android:textSize="24dp"
                 android:padding="2dp"
                 />
 
@@ -104,7 +104,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="Company:"
-                        android:textSize="20dp"
+                        android:textSize="17dp"
                         android:textStyle="bold"
                         android:textColor="#000000"
                         android:gravity="right|center"/>
@@ -138,7 +138,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="Product:"
-                        android:textSize="20dp"
+                        android:textSize="17dp"
                         android:textStyle="bold"
                         android:textColor="#000000"
                         android:gravity="right|center"/>
@@ -174,7 +174,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="Model:"
-                        android:textSize="20dp"
+                        android:textSize="17dp"
                         android:textStyle="bold"
                         android:textColor="#000000"
                         android:gravity="right|center"/>
@@ -182,7 +182,10 @@
                     <Spinner
                         android:layout_weight="5"
                         android:layout_width="0dp"
-                        android:layout_height="match_parent"></Spinner>
+                        android:layout_height="match_parent"
+                        android:entries="@array/ips_model"
+                        android:prompt="@string/ips_model_prompt"
+                        ></Spinner>
 
                     <Button
                         android:layout_weight="2"
@@ -208,7 +211,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="Battery:"
-                        android:textSize="20dp"
+                        android:textSize="17dp"
                         android:textStyle="bold"
                         android:textColor="#000000"
                         android:gravity="right|center"/>
@@ -216,7 +219,9 @@
                     <Spinner
                         android:layout_weight="5"
                         android:layout_width="0dp"
-                        android:layout_height="match_parent"></Spinner>
+                        android:layout_height="match_parent"
+                        android:prompt="@string/ips_battery_prompt"
+                        android:entries="@array/ips_battery"></Spinner>
 
                     <Button
                         android:layout_weight="2"
@@ -242,16 +247,19 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="Batt ADJ:"
-                        android:textSize="20dp"
+                        android:textSize="17dp"
                         android:textStyle="bold"
                         android:textColor="#000000"
                         android:gravity="right|center"/>
-                    <SeekBar
 
+                    <SeekBar
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:layout_gravity="center"/>
+                        android:layout_gravity="center"
+                        android:max="25"
+                        android:min="0"
+                        android:progress="0"/>
 
                     <EditText
 
@@ -283,7 +291,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="Low Batt:"
-                        android:textSize="20dp"
+                        android:textSize="17dp"
                         android:textStyle="bold"
                         android:textColor="#000000"
                         android:gravity="right|center"/>
@@ -292,7 +300,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:layout_gravity="center"/>
+                        android:layout_gravity="center"
+                        android:max="50"
+                        android:min="0"
+                        android:progress="10"/>
 
                     <EditText
 
@@ -324,16 +335,20 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="Full Char:"
-                        android:textSize="20dp"
+                        android:textSize="17dp"
                         android:textStyle="bold"
                         android:textColor="#000000"
                         android:gravity="right|center"/>
-                    <SeekBar
 
+                    <SeekBar
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:layout_gravity="center"/>
+                        android:layout_gravity="center"
+                        android:max="60"
+                        android:min="0"
+                        android:progress="14"
+                        />
 
                     <EditText
 
@@ -365,7 +380,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="Reconnect:"
-                        android:textSize="20dp"
+                        android:textSize="17dp"
                         android:textStyle="bold"
                         android:textColor="#000000"
                         android:gravity="right|center"/>
@@ -374,7 +389,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:layout_gravity="center"/>
+                        android:layout_gravity="center"
+                        android:max="60"
+                        android:min="0"
+                        android:progress="10"/>
 
                     <EditText
 
@@ -406,7 +424,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="PWM ADJ:"
-                        android:textSize="20dp"
+                        android:textSize="17dp"
                         android:textStyle="bold"
                         android:textColor="#000000"
                         android:gravity="right|center"/>
@@ -415,7 +433,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:layout_gravity="center"/>
+                        android:layout_gravity="center"
+                        android:max="50"
+                        android:min="0"
+                        android:progress="0"/>
 
                     <EditText
 
@@ -436,6 +457,180 @@
 
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:weightSum="10"
+                    android:padding="5dp">
+
+
+                    <Button
+                        android:layout_weight="5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/round_button_green"
+                        android:text="NO LOAD SET"
+                        android:textStyle="bold"
+                        android:textSize="17dp"
+                        android:textColor="#FFFFFF"
+                        android:layout_margin="3dp"/>
+
+                    <Button
+                        android:layout_weight="5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/round_button_green"
+                        android:text="FULL LOAD SET"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="#FFFFFF"
+                        android:layout_margin="3dp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:weightSum="10"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_weight="3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="WATT:"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:gravity="right|center"/>
+
+                    <Spinner
+                        android:layout_weight="5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:prompt="@string/ips_watt_prompt"
+                        android:entries="@array/ips_watt"></Spinner>
+
+                    <Button
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/round_button_green"
+                        android:text="SET"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="#FFFFFF"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:weightSum="10"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_weight="3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="AC ADJ:"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:gravity="right|center"/>
+
+                    <SeekBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:layout_gravity="center"
+                        android:max="50"
+                        android:min="0"
+                        android:progress="0"
+                        />
+
+                    <EditText
+
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+
+                    <Button
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/round_button_green"
+                        android:text="SET"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="#FFFFFF"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:weightSum="10"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_weight="3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="CHAR AMP:"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:gravity="right|center"/>
+
+                    <SeekBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:layout_gravity="center"
+                        android:max="50"
+                        android:min="0"
+                        android:progress="0"/>
+
+                    <EditText
+
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+
+                    <Button
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/round_button_green"
+                        android:text="SET"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="#FFFFFF"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:weightSum="10"
+                    android:padding="5dp"
+                    android:gravity="center">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DONE"
+                        android:background="@drawable/round_button_red"
+                        android:padding="3dp"
+                        android:textColor="#FFFFFF"/>
+
+                </LinearLayout>
+
             </LinearLayout>
 
         </ScrollView>
@@ -447,6 +642,12 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/kitsware"
+            android:layout_margin="10dp"/>
 
 
     </LinearLayout>
