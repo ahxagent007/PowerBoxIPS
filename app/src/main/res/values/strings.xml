@@ -12,14 +12,19 @@
         <item>1600VA</item>
         <item>1800VA</item>
         <item>2000VA</item>
+        <item>2200VA</item>
+        <item>2400VA</item>
+        <item>2600VA</item>
+        <item>2800VA</item>
+        <item>3000VA</item>
     </string-array>
 
     <string name="ips_battery_prompt">Battery</string>
     <string-array name="ips_battery">
-        <item>12</item>
-        <item>24</item>
-        <item>36</item>
-        <item>48</item>
+        <item>BATT12</item>
+        <item>BATT24</item>
+        <item>BATT36</item>
+        <item>BATT48</item>
     </string-array>
 
 
@@ -33,6 +38,11 @@
         <item>1600</item>
         <item>1800</item>
         <item>2000</item>
+        <item>2200</item>
+        <item>2400</item>
+        <item>2600</item>
+        <item>2800</item>
+        <item>3000</item>
     </string-array>
 
 

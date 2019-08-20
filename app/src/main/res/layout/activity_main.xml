@@ -34,6 +34,15 @@
                 android:padding="2dp"
                 />
 
+            <Button
+                android:id="@+id/btn_connectionIndicator"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:background="@drawable/round_button_red"
+                android:layout_margin="10dp"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -69,6 +78,13 @@
                 android:padding="3dp"
                 android:text="Default"
                 android:layout_margin="2dp"/>
+
+            <ImageButton
+                android:id="@+id/IB_sync"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:src="@android:drawable/ic_dialog_alert" />
 
 
         </LinearLayout>
@@ -110,11 +126,13 @@
                         android:gravity="right|center"/>
 
                     <EditText
+                        android:id="@+id/ET_company"
                         android:layout_weight="5"
                         android:layout_width="0dp"
                         android:layout_height="match_parent" />
 
                     <Button
+                        android:id="@+id/btn_company"
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -145,12 +163,14 @@
 
 
                     <EditText
+                        android:id="@+id/ET_product"
                         android:layout_weight="5"
                         android:layout_width="0dp"
                         android:layout_height="match_parent" />
 
 
                     <Button
+                        android:id="@+id/btn_product"
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -180,6 +200,7 @@
                         android:gravity="right|center"/>
 
                     <Spinner
+                        android:id="@+id/sp_model"
                         android:layout_weight="5"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -188,6 +209,7 @@
                         ></Spinner>
 
                     <Button
+                        android:id="@+id/btn_model"
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -217,6 +239,7 @@
                         android:gravity="right|center"/>
 
                     <Spinner
+                        android:id="@+id/sp_battery"
                         android:layout_weight="5"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -224,6 +247,7 @@
                         android:entries="@array/ips_battery"></Spinner>
 
                     <Button
+                        android:id="@+id/btn_battery"
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -253,6 +277,7 @@
                         android:gravity="right|center"/>
 
                     <SeekBar
+                        android:id="@+id/sb_battADJ"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
@@ -262,12 +287,13 @@
                         android:progress="0"/>
 
                     <EditText
-
+                        android:id="@+id/ET_battADJ"
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent" />
 
                     <Button
+                        android:id="@+id/btn_battADJ"
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -295,8 +321,9 @@
                         android:textStyle="bold"
                         android:textColor="#000000"
                         android:gravity="right|center"/>
-                    <SeekBar
 
+                    <SeekBar
+                        android:id="@+id/sb_lowBatt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
@@ -306,12 +333,13 @@
                         android:progress="10"/>
 
                     <EditText
-
+                        android:id="@+id/ET_lowBatt"
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent" />
 
                     <Button
+                        android:id="@+id/btn_lowBatt"
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -341,6 +369,7 @@
                         android:gravity="right|center"/>
 
                     <SeekBar
+                        android:id="@+id/b_fullChar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
@@ -351,12 +380,13 @@
                         />
 
                     <EditText
-
+                        android:id="@+id/ET_fullChar"
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent" />
 
                     <Button
+                        android:id="@+id/btn_fullChar"
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -384,8 +414,9 @@
                         android:textStyle="bold"
                         android:textColor="#000000"
                         android:gravity="right|center"/>
-                    <SeekBar
 
+                    <SeekBar
+                        android:id="@+id/sb_reconnect"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
@@ -395,12 +426,13 @@
                         android:progress="10"/>
 
                     <EditText
-
+                        android:id="@+id/ET_reconnect"
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent" />
 
                     <Button
+                        android:id="@+id/btn_reconnect"
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -428,8 +460,9 @@
                         android:textStyle="bold"
                         android:textColor="#000000"
                         android:gravity="right|center"/>
-                    <SeekBar
 
+                    <SeekBar
+                        android:id="@+id/sb_pwmADJ"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
@@ -439,12 +472,13 @@
                         android:progress="0"/>
 
                     <EditText
-
+                        android:id="@+id/ET_pwmADJ"
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent" />
 
                     <Button
+                        android:id="@+id/btn_pwmADJ"
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -465,6 +499,7 @@
 
 
                     <Button
+                        android:id="@+id/btn_noLoadSet"
                         android:layout_weight="5"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -476,6 +511,7 @@
                         android:layout_margin="3dp"/>
 
                     <Button
+                        android:id="@+id/btn_fullLoadSet"
                         android:layout_weight="5"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -506,6 +542,7 @@
                         android:gravity="right|center"/>
 
                     <Spinner
+                        android:id="@+id/sp_watt"
                         android:layout_weight="5"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -513,6 +550,7 @@
                         android:entries="@array/ips_watt"></Spinner>
 
                     <Button
+                        android:id="@+id/btn_watt"
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -542,6 +580,7 @@
                         android:gravity="right|center"/>
 
                     <SeekBar
+                        android:id="@+id/sb_acADJ"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
@@ -552,12 +591,13 @@
                         />
 
                     <EditText
-
+                        android:id="@+id/ET_acADJ"
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent" />
 
                     <Button
+                        android:id="@+id/btn_acADJ"
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -587,6 +627,7 @@
                         android:gravity="right|center"/>
 
                     <SeekBar
+                        android:id="@+id/sb_charAMP"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
@@ -596,12 +637,13 @@
                         android:progress="0"/>
 
                     <EditText
-
+                        android:id="@+id/ET_charAMP"
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent" />
 
                     <Button
+                        android:id="@+id/btn_charAMP"
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -622,6 +664,7 @@
                     android:gravity="center">
 
                     <Button
+                        android:id="@+id/btn_Done"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="DONE"
