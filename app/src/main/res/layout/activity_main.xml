@@ -84,7 +84,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:src="@android:drawable/ic_dialog_alert" />
+                android:background="@drawable/round_button_red"
+                android:src="@android:drawable/ic_dialog_alert"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"/>
 
 
         </LinearLayout>
@@ -369,7 +372,7 @@
                         android:gravity="right|center"/>
 
                     <SeekBar
-                        android:id="@+id/b_fullChar"
+                        android:id="@+id/sb_fullChar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"

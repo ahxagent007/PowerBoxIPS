@@ -13,6 +13,11 @@ import android.hardware.usb.UsbManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.SeekBar;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.felhr.usbserial.UsbSerialDevice;
@@ -39,12 +44,171 @@ public class MainActivity extends AppCompatActivity {
     //Nano 6790 P 7523
     //pro mini 1659
 
+
+    //ALL UI OBJECTS
+    private EditText ET_company, ET_product, ET_battADJ, ET_lowBatt, ET_fullChar, ET_reconnect, ET_pwmADJ, ET_acADJ, ET_charAMP;
+    private Button btn_Done, btn_charAMP, btn_acADJ, btn_watt, btn_fullLoadSet, btn_noLoadSet, btn_pwmADJ, btn_reconnect, btn_connectionIndicator,
+                    btn_fullChar, btn_lowBatt, btn_battADJ, btn_battery, btn_model, btn_product, btn_company;
+    private Spinner sp_model, sp_battery, sp_watt;
+    private SeekBar sb_battADJ, sb_lowBatt, sb_fullChar, sb_reconnect, sb_pwmADJ, sb_acADJ, sb_charAMP;
+    private ImageButton IB_sync;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         onCreateArduinoReceiver();
+        initialzeAllUI();
+        allListeners();
+
+
+    }
+
+    private void initialzeAllUI(){
+
+        sb_battADJ = findViewById(R.id.sb_battADJ);
+        sb_lowBatt = findViewById(R.id.sb_lowBatt);
+        sb_fullChar = findViewById(R.id.sb_fullChar);
+        sb_reconnect = findViewById(R.id.sb_reconnect);
+        sb_pwmADJ = findViewById(R.id.sb_pwmADJ);
+        sb_acADJ = findViewById(R.id.sb_acADJ);
+        sb_charAMP = findViewById(R.id.sb_charAMP);
+
+        ET_company = findViewById(R.id.ET_company);
+        ET_product = findViewById(R.id.ET_product);
+        ET_battADJ = findViewById(R.id.ET_battADJ);
+        ET_lowBatt = findViewById(R.id.ET_lowBatt);
+        ET_fullChar = findViewById(R.id.ET_fullChar);
+        ET_reconnect = findViewById(R.id.ET_reconnect);
+        ET_pwmADJ = findViewById(R.id.ET_pwmADJ);
+        ET_acADJ = findViewById(R.id.ET_acADJ);
+        ET_charAMP = findViewById(R.id.ET_charAMP);
+
+    }
+
+    private void allListeners(){
+        sb_battADJ.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                ET_battADJ.setText(""+progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        sb_lowBatt.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                ET_lowBatt.setText(""+progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        sb_fullChar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                ET_fullChar.setText(""+progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        sb_reconnect.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                ET_reconnect.setText(""+progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        sb_pwmADJ.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                ET_pwmADJ.setText(""+progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        sb_acADJ.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                ET_acADJ.setText(""+progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        sb_charAMP.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                ET_charAMP.setText(""+progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+
+
 
     }
 
@@ -243,4 +407,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
