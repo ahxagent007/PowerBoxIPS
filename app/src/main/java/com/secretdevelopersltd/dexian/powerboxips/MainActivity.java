@@ -13,6 +13,7 @@ import android.hardware.usb.UsbManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -65,7 +66,122 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void btnClicked(View view) {
+        int p = 0;
+        String temp = "";
+        switch (view.getId()){
+
+            case R.id.btn_Done:
+
+                break;
+
+            case R.id.btn_charAMP:
+                p = Integer.parseInt(ET_charAMP.getText().toString());
+                sendArduino("AMPADJ="+p); //confusion
+
+                break;
+
+            case R.id.btn_acADJ:
+                p = Integer.parseInt(ET_acADJ.getText().toString());
+                sendArduino("ACADJ="+p);
+                break;
+
+            case R.id.btn_watt:
+                temp = sp_watt.getSelectedItem().toString();
+                sendArduino("WATT="+temp);
+                break;
+
+            case R.id.btn_fullLoadSet:
+                sendArduino("FULLLOAD");
+                break;
+
+            case R.id.btn_noLoadSet:
+                sendArduino("NOLOAD");
+                break;
+
+            case R.id.btn_pwmADJ:
+                p = Integer.parseInt(ET_pwmADJ.getText().toString());
+                sendArduino("PWMADJ="+p);
+                break;
+
+            case R.id.btn_reconnect:
+                p = Integer.parseInt(ET_reconnect.getText().toString());
+                sendArduino("RECONNECT="+p+".0");
+                break;
+
+            case R.id.btn_connectionIndicator:
+
+                break;
+
+            case R.id.btn_fullChar:
+                p = Integer.parseInt(ET_fullChar.getText().toString());
+                sendArduino("FULLCHAR="+p+".0");
+                break;
+
+            case R.id.btn_lowBatt:
+                 p = Integer.parseInt(ET_lowBatt.getText().toString());
+                sendArduino("LOWBATT="+p+".0");
+                break;
+
+            case R.id.btn_battADJ:
+                p = Integer.parseInt(ET_battADJ.getText().toString());
+                sendArduino("BATTADJ="+p+".0");
+                break;
+
+            case R.id.btn_battery:
+                temp = sp_battery.getSelectedItem().toString();
+                sendArduino(""+temp);
+                break;
+
+            case R.id.btn_model:
+                temp = sp_model.getSelectedItem().toString();
+                for(int i=temp.length();i<15;i++){
+                    temp += " ";
+                }
+                temp += ".";
+
+                sendArduino("VERSION=MODEL:"+temp);
+                break;
+
+            case R.id.btn_product:
+                sendArduino("BRAND=POWER BOX I.P.S.");
+                break;
+
+            case R.id.btn_company:
+                sendArduino("COMPANY= KITSWARE TECH. ");
+                break;
+
+            default:
+                break;
+
+        }
+    }
+
     private void initialzeAllUI(){
+
+
+        sp_model = findViewById(R.id.sp_model);
+        sp_battery = findViewById(R.id.sp_battery);
+        sp_watt = findViewById(R.id.sp_watt);
+
+        IB_sync = findViewById(R.id.IB_sync);
+
+        btn_Done = findViewById(R.id.btn_Done);
+        btn_charAMP = findViewById(R.id.btn_charAMP);
+        btn_acADJ = findViewById(R.id.btn_acADJ);
+        btn_watt = findViewById(R.id.btn_watt);
+        btn_fullLoadSet = findViewById(R.id.btn_fullLoadSet);
+        btn_noLoadSet = findViewById(R.id.btn_noLoadSet);
+        btn_pwmADJ = findViewById(R.id.btn_pwmADJ);
+        btn_reconnect = findViewById(R.id.btn_reconnect);
+        btn_connectionIndicator = findViewById(R.id.btn_connectionIndicator);
+        btn_fullChar = findViewById(R.id.btn_fullChar);
+        btn_lowBatt = findViewById(R.id.btn_lowBatt);
+        btn_battery = findViewById(R.id.btn_battery);
+        btn_battADJ = findViewById(R.id.btn_battADJ);
+        btn_model = findViewById(R.id.btn_model);
+        btn_product = findViewById(R.id.btn_product);
+        btn_company = findViewById(R.id.btn_company);
 
         sb_battADJ = findViewById(R.id.sb_battADJ);
         sb_lowBatt = findViewById(R.id.sb_lowBatt);
@@ -84,6 +200,16 @@ public class MainActivity extends AppCompatActivity {
         ET_pwmADJ = findViewById(R.id.ET_pwmADJ);
         ET_acADJ = findViewById(R.id.ET_acADJ);
         ET_charAMP = findViewById(R.id.ET_charAMP);
+
+        ET_battADJ.setText(""+sb_battADJ.getProgress());
+        ET_lowBatt.setText(""+sb_lowBatt.getProgress());
+        ET_fullChar.setText(""+sb_fullChar.getProgress());
+        ET_reconnect.setText(""+sb_reconnect.getProgress());
+        ET_pwmADJ.setText(""+sb_pwmADJ.getProgress());
+        ET_acADJ.setText(""+sb_acADJ.getProgress());
+        ET_charAMP.setText(""+sb_charAMP.getProgress());
+
+
 
     }
 
@@ -213,6 +339,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+
+
     //Arduino
     UsbSerialInterface.UsbReadCallback mCallback;
     private BroadcastReceiver broadcastReceiver ;
@@ -333,8 +462,8 @@ public class MainActivity extends AppCompatActivity {
                                 serialPort.setFlowControl(UsbSerialInterface.FLOW_CONTROL_OFF);
                                 serialPort.read(mCallback);
                                 //tvAppend(textView,"Serial Connection Opened!\n"+xix);
-                                display("Connection Opened!\n");
-
+                                //display("Connection Opened!\n");
+                                display("Device Connected\n");
 
 
                             } else {
@@ -407,6 +536,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 
 
 }

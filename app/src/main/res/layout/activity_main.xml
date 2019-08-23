@@ -143,7 +143,8 @@
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
-                        android:textColor="#FFFFFF"/>
+                        android:textColor="#FFFFFF"
+                        android:onClick="btnClicked"/>
 
 
                 </LinearLayout>
@@ -181,7 +182,8 @@
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
-                        android:textColor="#FFFFFF"/>
+                        android:textColor="#FFFFFF"
+                        android:onClick="btnClicked"/>
 
 
                 </LinearLayout>
@@ -220,7 +222,8 @@
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
-                        android:textColor="#FFFFFF"/>
+                        android:textColor="#FFFFFF"
+                        android:onClick="btnClicked"/>
 
 
                 </LinearLayout>
@@ -258,7 +261,8 @@
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
-                        android:textColor="#FFFFFF"/>
+                        android:textColor="#FFFFFF"
+                        android:onClick="btnClicked"/>
 
 
                 </LinearLayout>
@@ -304,7 +308,8 @@
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
-                        android:textColor="#FFFFFF"/>
+                        android:textColor="#FFFFFF"
+                        android:onClick="btnClicked"/>
 
 
                 </LinearLayout>
@@ -350,7 +355,8 @@
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
-                        android:textColor="#FFFFFF"/>
+                        android:textColor="#FFFFFF"
+                        android:onClick="btnClicked"/>
 
 
                 </LinearLayout>
@@ -397,7 +403,8 @@
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
-                        android:textColor="#FFFFFF"/>
+                        android:textColor="#FFFFFF"
+                        android:onClick="btnClicked"/>
 
 
                 </LinearLayout>
@@ -443,7 +450,8 @@
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
-                        android:textColor="#FFFFFF"/>
+                        android:textColor="#FFFFFF"
+                        android:onClick="btnClicked"/>
 
 
                 </LinearLayout>
@@ -489,7 +497,8 @@
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
-                        android:textColor="#FFFFFF"/>
+                        android:textColor="#FFFFFF"
+                        android:onClick="btnClicked"/>
 
 
                 </LinearLayout>
@@ -511,7 +520,8 @@
                         android:textStyle="bold"
                         android:textSize="17dp"
                         android:textColor="#FFFFFF"
-                        android:layout_margin="3dp"/>
+                        android:layout_margin="3dp"
+                        android:onClick="btnClicked"/>
 
                     <Button
                         android:id="@+id/btn_fullLoadSet"
@@ -523,7 +533,8 @@
                         android:textStyle="bold"
                         android:textSize="18dp"
                         android:textColor="#FFFFFF"
-                        android:layout_margin="3dp"/>
+                        android:layout_margin="3dp"
+                        android:onClick="btnClicked"/>
 
 
                 </LinearLayout>
@@ -561,7 +572,8 @@
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
-                        android:textColor="#FFFFFF"/>
+                        android:textColor="#FFFFFF"
+                        android:onClick="btnClicked"/>
 
 
                 </LinearLayout>
@@ -608,7 +620,8 @@
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
-                        android:textColor="#FFFFFF"/>
+                        android:textColor="#FFFFFF"
+                        android:onClick="btnClicked"/>
 
 
                 </LinearLayout>
@@ -654,7 +667,8 @@
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
-                        android:textColor="#FFFFFF"/>
+                        android:textColor="#FFFFFF"
+                        android:onClick="btnClicked"/>
 
 
                 </LinearLayout>
@@ -673,7 +687,8 @@
                         android:text="DONE"
                         android:background="@drawable/round_button_red"
                         android:padding="3dp"
-                        android:textColor="#FFFFFF"/>
+                        android:textColor="#FFFFFF"
+                        android:onClick="btnClicked"/>
 
                 </LinearLayout>
 
