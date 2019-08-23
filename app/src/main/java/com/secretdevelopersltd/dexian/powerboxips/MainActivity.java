@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     UsbSerialDevice serialPort;
     UsbDeviceConnection connection;
 
-    private int xVID = 9025; //NANO is the main circuit board
+    private int xVID = 1659; //NANO is the main circuit board
     //Arduino Uno 0x2341 , 9025 P 67
     //Nano 6790 P 7523
     //pro mini 1659
@@ -67,46 +67,54 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnClicked(View view) {
-        int p = 0;
+        double p = 0.0;
         String temp = "";
         switch (view.getId()){
 
             case R.id.btn_Done:
-
+                sendArduino("EXIT");
+                display("EXIT");
                 break;
 
             case R.id.btn_charAMP:
-                p = Integer.parseInt(ET_charAMP.getText().toString());
-                sendArduino("AMPADJ="+p); //confusion
+                p = Double.parseDouble(ET_charAMP.getText().toString());
+                sendArduino("AMPADJ="+p+"\n"); //confusion
+                display("Setting AMPADJ="+p);
 
                 break;
 
             case R.id.btn_acADJ:
-                p = Integer.parseInt(ET_acADJ.getText().toString());
-                sendArduino("ACADJ="+p);
+                p = Double.parseDouble(ET_acADJ.getText().toString());
+                sendArduino("ACADJ="+p+"\n");
+                display("Setting ACADJ="+p);
                 break;
 
             case R.id.btn_watt:
                 temp = sp_watt.getSelectedItem().toString();
-                sendArduino("WATT="+temp);
+                sendArduino("WATT="+temp+"\n");
+                display("Setting WATT="+temp);
                 break;
 
             case R.id.btn_fullLoadSet:
-                sendArduino("FULLLOAD");
+                sendArduino("FULLLOAD"+"\n");
+                display("Setting FULLLOAD");
                 break;
 
             case R.id.btn_noLoadSet:
-                sendArduino("NOLOAD");
+                sendArduino("NOLOAD"+"\n");
+                display("Setting NOLOAD");
                 break;
 
             case R.id.btn_pwmADJ:
-                p = Integer.parseInt(ET_pwmADJ.getText().toString());
-                sendArduino("PWMADJ="+p);
+                p = Double.parseDouble(ET_pwmADJ.getText().toString());
+                sendArduino("PWMADJ="+p+"\n");
+                display("Setting PWMADJ="+p);
                 break;
 
             case R.id.btn_reconnect:
-                p = Integer.parseInt(ET_reconnect.getText().toString());
-                sendArduino("RECONNECT="+p+".0");
+                p = Double.parseDouble(ET_reconnect.getText().toString());
+                sendArduino("RECONNECT="+p+""+"\n");
+                display("Setting RECONNECT="+p);
                 break;
 
             case R.id.btn_connectionIndicator:
@@ -114,23 +122,27 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.btn_fullChar:
-                p = Integer.parseInt(ET_fullChar.getText().toString());
-                sendArduino("FULLCHAR="+p+".0");
+                p = Double.parseDouble(ET_fullChar.getText().toString());
+                sendArduino("FULLCHAR="+p+""+"\n");
+                display("Setting FULLCHAR="+p);
                 break;
 
             case R.id.btn_lowBatt:
-                 p = Integer.parseInt(ET_lowBatt.getText().toString());
-                sendArduino("LOWBATT="+p+".0");
+                 p = Double.parseDouble(ET_lowBatt.getText().toString());
+                sendArduino("LOWBATT="+p+""+"\n");
+                display("Setting LOWBATT="+p);
                 break;
 
             case R.id.btn_battADJ:
-                p = Integer.parseInt(ET_battADJ.getText().toString());
-                sendArduino("BATTADJ="+p+".0");
+                p = Double.parseDouble(ET_battADJ.getText().toString());
+                sendArduino("BATTADJ="+p+""+"\n");
+                display("Setting BATTADJ="+p);
                 break;
 
             case R.id.btn_battery:
                 temp = sp_battery.getSelectedItem().toString();
-                sendArduino(""+temp);
+                sendArduino(""+temp+"\n");
+                display("Setting "+temp);
                 break;
 
             case R.id.btn_model:
@@ -140,15 +152,37 @@ public class MainActivity extends AppCompatActivity {
                 }
                 temp += ".";
 
-                sendArduino("VERSION=MODEL:"+temp);
+                sendArduino("VERSION=MODEL:"+temp+"\n");
+                display("Setting MODEL:"+temp);
                 break;
 
             case R.id.btn_product:
-                sendArduino("BRAND=POWER BOX I.P.S.");
+                temp = ET_product.getText().toString();
+
+                if(temp.length() == 16){
+                    sendArduino("BRAND="+temp+"\n");
+                }else{
+
+                    display("16 Character Please");
+                }
+
                 break;
 
             case R.id.btn_company:
-                sendArduino("COMPANY= KITSWARE TECH. ");
+                temp = ET_company.getText().toString();
+
+                if(temp.length() == 16){
+                    sendArduino("COMPANY="+temp+"\n");
+                }else{
+
+                    display("16 Character Please");
+                }
+
+                break;
+
+            case R.id.IB_sync:
+                sendArduino("PARAMS");
+                display("DATA SYNC!");
                 break;
 
             default:
@@ -217,7 +251,9 @@ public class MainActivity extends AppCompatActivity {
         sb_battADJ.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                ET_battADJ.setText(""+progress);
+                double tp = (double) progress / 10;
+
+                ET_battADJ.setText(""+tp);
             }
 
             @Override
@@ -234,7 +270,8 @@ public class MainActivity extends AppCompatActivity {
         sb_lowBatt.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                ET_lowBatt.setText(""+progress);
+                double tp = (double) progress / 10;
+                ET_lowBatt.setText(""+tp);
             }
 
             @Override
@@ -251,7 +288,8 @@ public class MainActivity extends AppCompatActivity {
         sb_fullChar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                ET_fullChar.setText(""+progress);
+                double tp = (double) progress / 10;
+                ET_fullChar.setText(""+tp);
             }
 
             @Override
@@ -268,7 +306,8 @@ public class MainActivity extends AppCompatActivity {
         sb_reconnect.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                ET_reconnect.setText(""+progress);
+                double tp = (double) progress / 10;
+                ET_reconnect.setText(""+tp);
             }
 
             @Override
@@ -285,7 +324,8 @@ public class MainActivity extends AppCompatActivity {
         sb_pwmADJ.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                ET_pwmADJ.setText(""+progress);
+                double tp = (double) progress / 10;
+                ET_pwmADJ.setText(""+tp);
             }
 
             @Override
@@ -302,7 +342,8 @@ public class MainActivity extends AppCompatActivity {
         sb_acADJ.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                ET_acADJ.setText(""+progress);
+                double tp = (double) progress / 10;
+                ET_acADJ.setText(""+tp);
             }
 
             @Override
@@ -319,7 +360,8 @@ public class MainActivity extends AppCompatActivity {
         sb_charAMP.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                ET_charAMP.setText(""+progress);
+                double tp = (double) progress / 10;
+                ET_charAMP.setText(""+tp);
             }
 
             @Override
@@ -507,6 +549,52 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     data = new String(arg0, "UTF-8");
 
+                    if(data.length() != 0){
+
+                        displayWithNewThread("RECEIVED : "+data);
+
+
+                        if(data.substring(0,2).equals("COM")){
+                            //"COMPANY=" + company
+                        }else if(data.substring(0,2).equals("BRA")){
+                            //"BRAND=" + brand
+                        }else if(data.substring(0,2).equals("VER")){
+
+                            //"VERSION=" + version
+                        }else if(data.substring(0,4).equals("BATTM")){
+                            //"BATTMODE=" + battMode
+
+                        }else if(data.substring(0,4).equals("BATTA")){
+                            //"BATTADJ=" + battFactor
+
+                        }else if(data.substring(0,2).equals("LOW")){
+                            //"LOWBATT=" + lowBatt
+
+                        }else if(data.substring(0,3).equals("PWM=")){
+                            //"PWM=" + pwmAdc
+
+                        }else if(data.substring(0,3).equals("PWMA")){
+                            //"PWMADJ=" + pwmFactor
+
+                        }else if(data.substring(0,2).equals("WAT")){
+                            //"WATT=" + maxWatt
+
+                        }else if(data.substring(0,2).equals("ACA")){
+                            //"ACADJ=" + acFactor
+
+                        }else if(data.substring(0,2).equals("AMP")){
+                            //"AMPADJ=" + ampFactor
+
+                        }else if(data.substring(0,2).equals("FUL")){
+                            //"FULLCHARGE=" + fullCharge
+
+                        }else if(data.substring(0,2).equals("REC")){
+                            //"RECONNECT=" + reConnect
+
+                        }
+
+                    }
+
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
 
@@ -524,6 +612,15 @@ public class MainActivity extends AppCompatActivity {
 
         startArduino();
 
+    }
+
+    private void displayWithNewThread(final String msg) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     //Arduino Ends

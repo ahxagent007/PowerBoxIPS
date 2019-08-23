@@ -56,7 +56,7 @@
                 android:layout_weight="2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/round_button_orange"
+                android:background="@drawable/btn_pressed_orange"
                 android:padding="3dp"
                 android:text="Default"
                 android:layout_margin="2dp"/>
@@ -65,7 +65,7 @@
                 android:layout_weight="2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/round_button_orange"
+                android:background="@drawable/btn_pressed_orange"
                 android:padding="3dp"
                 android:text="Backup"
                 android:layout_margin="2dp"/>
@@ -74,9 +74,9 @@
                 android:layout_weight="2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/round_button_orange"
+                android:background="@drawable/btn_pressed_orange"
                 android:padding="3dp"
-                android:text="Default"
+                android:text="Charge"
                 android:layout_margin="2dp"/>
 
             <ImageButton
@@ -84,7 +84,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:background="@drawable/round_button_red"
+                android:background="@drawable/btn_pressed_red"
                 android:src="@android:drawable/ic_dialog_alert"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"/>
@@ -97,7 +97,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_weight="10"
+        android:layout_weight="11"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical">
@@ -139,7 +139,7 @@
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/round_button_green"
+                        android:background="@drawable/btn_pressed_green"
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
@@ -178,7 +178,7 @@
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/round_button_green"
+                        android:background="@drawable/btn_pressed_green"
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
@@ -218,7 +218,7 @@
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/round_button_green"
+                        android:background="@drawable/btn_pressed_green"
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
@@ -257,7 +257,7 @@
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/round_button_green"
+                        android:background="@drawable/btn_pressed_green"
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
@@ -289,7 +289,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:layout_gravity="center"
-                        android:max="25"
+                        android:max="250"
                         android:min="0"
                         android:progress="0"/>
 
@@ -304,7 +304,7 @@
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/round_button_green"
+                        android:background="@drawable/btn_pressed_green"
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
@@ -336,7 +336,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:layout_gravity="center"
-                        android:max="50"
+                        android:max="500"
                         android:min="0"
                         android:progress="10"/>
 
@@ -351,7 +351,7 @@
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/round_button_green"
+                        android:background="@drawable/btn_pressed_green"
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
@@ -383,7 +383,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:layout_gravity="center"
-                        android:max="60"
+                        android:max="600"
                         android:min="0"
                         android:progress="14"
                         />
@@ -399,7 +399,7 @@
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/round_button_green"
+                        android:background="@drawable/btn_pressed_green"
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
@@ -431,7 +431,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:layout_gravity="center"
-                        android:max="60"
+                        android:max="600"
                         android:min="0"
                         android:progress="10"/>
 
@@ -446,7 +446,7 @@
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/round_button_green"
+                        android:background="@drawable/btn_pressed_green"
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
@@ -478,7 +478,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:layout_gravity="center"
-                        android:max="50"
+                        android:max="500"
                         android:min="0"
                         android:progress="0"/>
 
@@ -493,7 +493,7 @@
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/round_button_green"
+                        android:background="@drawable/btn_pressed_green"
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
@@ -515,7 +515,7 @@
                         android:layout_weight="5"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/round_button_green"
+                        android:background="@drawable/btn_pressed_green"
                         android:text="NO LOAD SET"
                         android:textStyle="bold"
                         android:textSize="17dp"
@@ -528,7 +528,7 @@
                         android:layout_weight="5"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/round_button_green"
+                        android:background="@drawable/btn_pressed_green"
                         android:text="FULL LOAD SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
@@ -568,7 +568,7 @@
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/round_button_green"
+                        android:background="@drawable/btn_pressed_green"
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
@@ -600,7 +600,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:layout_gravity="center"
-                        android:max="50"
+                        android:max="500"
                         android:min="0"
                         android:progress="0"
                         />
@@ -616,7 +616,7 @@
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/round_button_green"
+                        android:background="@drawable/btn_pressed_green"
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
@@ -648,7 +648,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:layout_gravity="center"
-                        android:max="50"
+                        android:max="500"
                         android:min="0"
                         android:progress="0"/>
 
@@ -663,7 +663,7 @@
                         android:layout_weight="2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/round_button_green"
+                        android:background="@drawable/btn_pressed_green"
                         android:text="SET"
                         android:textStyle="bold"
                         android:textSize="18dp"
@@ -685,7 +685,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="DONE"
-                        android:background="@drawable/round_button_red"
+                        android:background="@drawable/btn_pressed_red"
                         android:padding="3dp"
                         android:textColor="#FFFFFF"
                         android:onClick="btnClicked"/>
@@ -699,7 +699,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical">
@@ -708,7 +708,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/kitsware"
-            android:layout_margin="10dp"/>
+            android:layout_margin="5dp"/>
 
 
     </LinearLayout>
