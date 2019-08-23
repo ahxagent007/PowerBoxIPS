@@ -324,7 +324,7 @@ public class MainActivity extends AppCompatActivity {
         sb_pwmADJ.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                double tp = (double) progress / 10;
+                double tp = (double) progress;
                 ET_pwmADJ.setText(""+tp);
             }
 
@@ -342,7 +342,7 @@ public class MainActivity extends AppCompatActivity {
         sb_acADJ.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                double tp = (double) progress / 10;
+                double tp = (double) progress;
                 ET_acADJ.setText(""+tp);
             }
 
@@ -360,7 +360,7 @@ public class MainActivity extends AppCompatActivity {
         sb_charAMP.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                double tp = (double) progress / 10;
+                double tp = (double) progress;
                 ET_charAMP.setText(""+tp);
             }
 
@@ -553,8 +553,9 @@ public class MainActivity extends AppCompatActivity {
 
                         displayWithNewThread("RECEIVED : "+data);
 
-
-                        if(data.substring(0,2).equals("COM")){
+                        if(data.equals("AT")){
+                            sendArduino("OK");
+                        }else if(data.substring(0,2).equals("COM")){
                             //"COMPANY=" + company
                         }else if(data.substring(0,2).equals("BRA")){
                             //"BRAND=" + brand
